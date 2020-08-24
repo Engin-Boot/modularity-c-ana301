@@ -8,7 +8,7 @@ namespace TelCo.ColorCoder
     {       
        private static ColorDataMember  colorDataMembers;
 
-       static GetColorFromPair(){
+       static GetPairFromColor(){
            ColorDataMember();
        }
        
