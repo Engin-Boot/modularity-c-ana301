@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
-using TelCo.ColorCoder.ColorPair;
 
-namespace TelCo.ColorCoder.ColorDataMember
+namespace TelCo.ColorCoder
 {
 
    class ColorDataMember
