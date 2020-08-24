@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
-using TelCo.ColorCoder.ColorDataMembers;
+using TelCo.ColorCoder.ColorDataMember;
 using TelCo.ColorCoder.ColorPair;
 
 namespace TelCo.ColorCoder
 {
     class GetPairFromColor
     {       
-       private static ColorDataMembers  colorDataMembers;
-   
+       private static ColorDataMember  colorDataMembers;
+
+       static GetColorFromPair(){
+           ColorDataMember();
+       }
+       
         /// <summary>
         /// Given the two colors the function returns the pair number corresponding to them
         /// </summary>
