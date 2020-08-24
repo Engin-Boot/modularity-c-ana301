@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
-using TelCo.ColorCoder.ColorDataMembers;
+using TelCo.ColorCoder.ColorDataMember;
+using TelCo.ColorCoder.ColorPair;
+
 
 namespace TelCo.ColorCoder
 {
     class GetColorFromPair
     {       
-       private static ColorDataMembers  colorDataMembers;
+       private static ColorDataMember  colorDataMember;
+        
+       static GetColorFromPair(){
+           ColorDataMember();
+       }
         /// <summary>
         /// Given a pair number function returns the major and minor colors in that order
         /// </summary>
@@ -16,8 +22,8 @@ namespace TelCo.ColorCoder
         public static ColorPair GetColorFromPairNumber(int pairNumber)
         {
             // The function supports only 1 based index. Pair numbers valid are from 1 to 25
-            int minorSize = colorDataMembers.colorMapMinor.Length;
-            int majorSize = colorDataMembers.colorMapMajor.Length;
+            int minorSize = colorDataMember.colorMapMinor.Length;
+            int majorSize = colorDataMember.colorMapMajor.Length;
             if (pairNumber < 1 || pairNumber > minorSize * majorSize)
             {
                 throw new ArgumentOutOfRangeException(
@@ -30,13 +36,11 @@ namespace TelCo.ColorCoder
             int minorIndex = zeroBasedPairNumber % minorSize;
 
             // Construct the return val from the arrays
-            colorDataMembers.ColorPair pair = new ColorPair() { majorColor = colorDataMembers.colorMapMajor[majorIndex],
-                minorColor = colorDataMembers.colorMapMinor[minorIndex] };
+            ColorPair pair = new ColorPair() { majorColor = colorDataMember.colorMapMajor[majorIndex],
+                minorColor = colorDataMember.colorMapMinor[minorIndex] };
             
             // return the value
             return pair;
-        }
-       
-       
+        }            
     }
 }
