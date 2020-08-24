@@ -6,8 +6,8 @@ namespace TelCo.ColorCoder
 {
   class ColorPair
         {
-            Color majorColor;
-            Color minorColor;
+            public Color majorColor;
+            public Color minorColor;
            
             public override string ToString()
             {
