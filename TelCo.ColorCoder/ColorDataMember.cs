@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using TelCo.ColorCoder.ColorPair;
 
-namespace TelCo.ColorCoder
+namespace TelCo.ColorCoder.ColorDataMember
 {
 
    class ColorDataMember
