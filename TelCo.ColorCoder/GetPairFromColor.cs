@@ -6,12 +6,6 @@ namespace TelCo.ColorCoder
 {
     class GetPairFromColor
     {       
-       private static ColorDataMember  colorDataMembers;
-
-       static GetPairFromColor(){
-           ColorDataMember();
-       }
-       
         /// <summary>
         /// Given the two colors the function returns the pair number corresponding to them
         /// </summary>
@@ -21,9 +15,9 @@ namespace TelCo.ColorCoder
         {
             // Find the major color in the array and get the index
             int majorIndex = -1;
-            for (int i = 0; i < colorDataMembers.colorMapMajor.Length; i++)
+            for (int i = 0; i <colorMapMajor.Length; i++)
             {
-                if (colorDataMembers.colorMapMajor[i] == pair.majorColor)
+                if (colorMapMajor[i] == pair.majorColor)
                 {
                     majorIndex = i;
                     break;
@@ -31,9 +25,9 @@ namespace TelCo.ColorCoder
             }
             // Find the minor color in the array and get the index
             int minorIndex = -1;
-            for (int i = 0; i < colorDataMembers.colorMapMinor.Length; i++)
+            for (int i = 0; i < colorMapMinor.Length; i++)
             {
-                if (colorDataMembers.colorMapMinor[i] == pair.minorColor)
+                if (colorMapMinor[i] == pair.minorColor)
                 {
                     minorIndex = i;
                     break;
@@ -47,7 +41,7 @@ namespace TelCo.ColorCoder
             }
             // Compute pair number and Return  
             // (Note: +1 in compute is because pair number is 1 based, not zero)
-            return (majorIndex * colorDataMembers.colorMapMinor.Length) + (minorIndex + 1);
+            return (majorIndex * colorMapMinor.Length) + (minorIndex + 1);
         }
     }
 }
