@@ -26,7 +26,7 @@ namespace TelCo.ColorCoder
             int zeroBasedPairNumber = pairNumber - 1;
             int majorIndex = zeroBasedPairNumber / minorSize;
             int minorIndex = zeroBasedPairNumber % minorSize;
-
+ 
             // Construct the return val from the arrays
             ColorPair pair = new ColorPair() { majorColor = ColorDataMember.colorMapMajor[majorIndex],
                 minorColor = ColorDataMember.colorMapMinor[minorIndex] };
