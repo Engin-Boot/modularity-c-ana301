@@ -4,17 +4,17 @@ using System.Drawing;
 namespace TelCo.ColorCoder
 {
     class Program
-    {   private static String toString(Color[] mapMajor,Color[] mapMinor){
+    {   private static String ConvertToString(Color[] mapMajor,Color[] mapMinor){
         String ans="";
         for(int i=0;i<mapMajor.Length;i++){
             for(int j=0;j<mapMinor.Length;j++){
                 int code=(i+1)*(j+1);
-                ans+="The color pair"+ToString(mapMajor[i])+ToString(mapMinor[j])+"has the code"+ToString(code)+"@";}}
+                ans+="The color pair"+Convert.ToString(mapMajor[i])+Convert.ToString(mapMinor[j])+"has the code"+Convert.ToString(code)+"@";}}
         return ans;}
         private static void Main(string[] args)
         {   
-            ColorDataMember colorDataMember=new ColorDataMember();
-            String text=ConvertToString(colorDataMember.colorMapMajor,colorDataMember.colorMapMinor);
+           
+            String text=ConvertToString(ColorDataMember.colorMapMajor,ColorDataMember.colorMapMinor);
             text = text.Replace("@", System.Environment.NewLine);
             Console.WriteLine("The color-code manual is as follows:\n {0}",text);
             
