@@ -9,14 +9,14 @@ namespace TelCo.ColorCoder
         for(int i=0;i<mapMajor.Length;i++){
             for(int j=0;j<mapMinor.Length;j++){
                 int code=(i+1)*(j+1);
-                ans+="The color pair"+Convert.ToString(mapMajor[i])+Convert.ToString(mapMinor[j])+"has the code"+Convert.ToString(code)+"@";}}
+                ans+="The color pair"+Convert.ToString(mapMajor[i])+Convert.ToString(mapMinor[j])+"has the code: "+Convert.ToString(code)+"@";}}
         return ans;}
         private static void Main(string[] args)
         {   
            
             String text=ConvertToString(ColorDataMember.colorMapMajor,ColorDataMember.colorMapMinor);
             text = text.Replace("@", System.Environment.NewLine);
-            Console.WriteLine("The color-code manual is as follows:\n {0}",text);
+            Console.WriteLine("The color-code manual is as follows:\n{0}",text);
             
             int pairNumber = 4;
             ColorPair testPair1 = GetColorFromPair.GetColorFromPairNumber(pairNumber);
