@@ -4,7 +4,7 @@ using System.Drawing;
 namespace TelCo.ColorCoder
 {
     class Program
-    {   private static String toString(Color[] mapMajor,Color[] mapMinor[]){
+    {   private static String toString(Color[] mapMajor,Color[] mapMinor){
         String ans="";
         for(int i=0;i<mapMajor.Length;i++){
             for(int j=0;j<mapMinor.Length;j++){
@@ -15,7 +15,7 @@ namespace TelCo.ColorCoder
         {   
             ColorDataMember colorDataMember=new ColorDataMember();
             String text=ConvertToString(colorDataMember.colorMapMajor,colorDataMember.colorMapMinor);
-            text = text.Replace("@", "@" + System.Environment.NewLine);
+            text = text.Replace("@", System.Environment.NewLine);
             Console.WriteLine("The color-code manual is as follows:\n {0}",text);
             
             int pairNumber = 4;
