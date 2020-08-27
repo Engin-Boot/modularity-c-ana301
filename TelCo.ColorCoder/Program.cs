@@ -1,13 +1,23 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
-
 namespace TelCo.ColorCoder
 {
     class Program
-    {   
+    {   private static String toString(Color[] mapMajor,Color[] mapMinor[]){
+        String ans="";
+        for(int i=0;i<mapMajor.Length;i++){
+            for(int j=0;j<mapMinor.Length;j++){
+                int code=(i+1)*(j+1);
+                ans+="The color pair"+ToString(mapMajor[i])+ToString(mapMinor[j])+"has the code"+ToString(code)+"@";}}
+        return ans;}
         private static void Main(string[] args)
         {   
+            ColorDataMember colorDataMember=new ColorDataMember();
+            String text=ConvertToString(colorDataMember.colorMapMajor,colorDataMember.colorMapMinor);
+            text = text.Replace("@", "@" + System.Environment.NewLine);
+            Console.WriteLine("The color-code manual is as follows:\n {0}",text);
+            
             int pairNumber = 4;
             ColorPair testPair1 = GetColorFromPair.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
