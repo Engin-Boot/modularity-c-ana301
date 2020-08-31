@@ -14,25 +14,9 @@ namespace TelCo.ColorCoder
         public static int GetPairNumberFromColor(ColorPair pair)
         {
             // Find the major color in the array and get the index
-            int majorIndex = -1;
-            for (int i = 0; i <ColorDataMember.colorMapMajor.Length; i++)
-            {
-                if (ColorDataMember.colorMapMajor[i] == pair.majorColor)
-                {
-                    majorIndex = i;
-                    break;
-                }
-            }
+            int majorIndex = GetIndex(ColorDataMember.colorMapMajor, pair.majorColor);
+            int minorIndex = GetIndex(ColorDataMember.colorMapMinor, pair.minorColor);
             // Find the minor color in the array and get the index
-            int minorIndex = -1;
-            for (int i = 0; i < ColorDataMember.colorMapMinor.Length; i++)
-            {
-                if (ColorDataMember.colorMapMinor[i] == pair.minorColor)
-                {
-                    minorIndex = i;
-                    break;
-                }
-            }
             // If colors can not be found throw an exception
             if (majorIndex == -1 || minorIndex == -1)
             {
@@ -42,6 +26,18 @@ namespace TelCo.ColorCoder
             // Compute pair number and Return  
             // (Note: +1 in compute is because pair number is 1 based, not zero)
             return (majorIndex * ColorDataMember.colorMapMinor.Length) + (minorIndex + 1);
+        }
+        private static int GetIndex(Color[] array,Color pairColor){
+            int index = -1;
+            for (int i = 0; i < array[i]; i++)
+            {
+                if (array[i] == pairColor)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return index;
         }
     }
 }
