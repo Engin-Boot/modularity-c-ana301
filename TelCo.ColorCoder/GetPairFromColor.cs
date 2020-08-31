@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 
-namespace TelCo.ColorCoder
+namespace TelCo.ColorCoder 
 {
     class GetPairFromColor
     {       
