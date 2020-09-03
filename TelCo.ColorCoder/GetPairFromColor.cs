@@ -29,7 +29,7 @@ namespace TelCo.ColorCoder
         }
         private static int GetIndex(Color[] array,Color pairColor){
             int index = -1;
-            for (int i = 0; i < array[i].Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] == pairColor)
                 {
